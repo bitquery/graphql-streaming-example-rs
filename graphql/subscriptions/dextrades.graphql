@@ -1,4 +1,4 @@
-subscription DextradesOnPumpfun($programId: String!) {
+subscription DexTrades($programId: String!) {
   Solana {
     DEXTrades(where: {Trade: {Dex: {ProgramAddress: {is: $programId}}}}) {
       Block {

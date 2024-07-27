@@ -64,7 +64,7 @@ impl From<String> for DateTime {
 #[derive(GraphQLQuery, Debug, Clone, Deserialize)]
 #[graphql(
     schema_path = "graphql/schema.graphql",
-    query_path = "graphql/subscriptions/dextrades_on_pumpfun.graphql",
+    query_path = "graphql/subscriptions/dextrades.graphql",
     response_derives = "Debug, Clone"
 )]
-pub struct DextradesOnPumpfun;
+pub struct DexTrades;

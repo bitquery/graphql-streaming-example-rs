@@ -16,8 +16,8 @@ mod tokio_spawner;
 
 use tokio_spawner::TokioSpawner;
 
-pub type DextradesOnPumpfunQuery = queries::DextradesOnPumpfun;
-pub type DextradesOnPumpfunVariables = queries::dextrades_on_pumpfun::Variables;
+pub type DexTradesQuery = queries::DexTrades;
+pub type DexTradesVariables = queries::dex_trades::Variables;
 
 
 pub async fn subscribe<T: GraphQLQuery + Send + Sync + Unpin + 'static>(
@@ -59,9 +59,9 @@ where
 async fn main() -> Result<()> {
     dotenv::dotenv().ok();
 
-    let (_client, mut stream) = subscribe::<DextradesOnPumpfunQuery>(
+    let (_client, mut stream) = subscribe::<DexTradesQuery>(
         &std::env::var("API_KEY")?,
-        DextradesOnPumpfunVariables {program_id: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P".to_string()},
+        DexTradesVariables {program_id: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P".to_string()},
     )
     .await?;
 
