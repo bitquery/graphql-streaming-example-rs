@@ -1,0 +1,32 @@
+subscription DextradesOnPumpfun($programId: String!) {
+  Solana {
+    DEXTrades(where: {Trade: {Dex: {ProgramAddress: {is: $programId}}}}) {
+      Block {
+        Slot
+        Time
+      }
+      Trade {
+        PriceAsymmetry
+        Buy {
+          Amount
+          Account {
+            Address
+          }
+          Price
+          Currency {
+            Name
+            MintAddress
+          }
+        }
+        Sell {
+          Amount
+          Currency {
+            MintAddress
+            Name
+          }
+        }
+      }
+    }
+  }
+}
+

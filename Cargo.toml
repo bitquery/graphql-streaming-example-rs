@@ -1,0 +1,30 @@
+[package]
+name = "bitquery-streaming-example-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nikita Kuznetsov <nikita@bitquery.io>"]
+license = "MIT"
+keywords = ["graphql", "api"]
+readme = "README.md"
+
+[dependencies]
+serde = { version = "1.0.193", default-features = false, features = ["derive"] }
+futures = "0.3.30"
+tokio = { version = "1.35.1", default-features = false, features = [
+    "macros",
+    "rt-multi-thread",
+] }
+graphql_client = { version = "0.13.0", default-features = false, features = [
+    "graphql_query_derive",
+] }
+graphql-ws-client = { version = "0.7.0", features = [
+    "client-graphql-client",
+    "cynic",
+] }
+async-tungstenite = { version = "0.24.0", features = [
+    "tokio-runtime",
+    "tokio-rustls-native-certs",
+    "tokio-native-tls",
+] }
+eyre = "0.6.11"
+dotenv = "0.15.0"
