@@ -1,5 +1,8 @@
 # Bitquery Graphql Streaming API Example on Rust
 
+## API Key
+For EAP you use API KEYs from API-V2, you can create token on https://account.bitquery.io/user/api_v2/access_tokens 
+
 ## Usage
 
 ```bash
